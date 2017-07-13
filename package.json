@@ -1,0 +1,24 @@
+{
+  "name": "ng4-helpers",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aroliant/ng4-helpers.git"
+  },
+  "keywords": [
+    "angular 4",
+    "helpers"
+  ],
+  "author": "Jacob Samro <jacob@aroliant.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aroliant/ng4-helpers/issues"
+  },
+  "homepage": "https://github.com/Aroliant/ng4-helpers"
+}
