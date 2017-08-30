@@ -1,5 +1,13 @@
 # Angular 4 Data Helpers
 
+### Installing
+
+Install using npm
+
+```
+npm install ng4-helpers@latest
+```
+
 ### Usage
 
 #### Import the Helper
