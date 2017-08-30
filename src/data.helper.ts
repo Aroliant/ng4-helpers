@@ -2,7 +2,7 @@ export class DataHelper{
 	data : String = ""
 	count  = 0
 
-	addParam(param,value){
+	addParam(param : any,value : any){
 		if(this.count != 0){
 			this.data += "&" + param + "=" + encodeURIComponent(value)
 		}else{
@@ -16,33 +16,21 @@ export class DataHelper{
 		this.count = 0;
 	}
 
-	addAll(obj,scope=""){
+	addAll(obj : any, prefix : any) : any {
+        var str = [],
+            p;
+        for (p in obj) {
+            if (obj.hasOwnProperty(p)) {
+                var k = prefix ? prefix + "[" + p + "]" : p,
+                    v = obj[p];
+                str.push((v !== null && typeof v === "object") ?
+                    this.addAll(v, k) :
+                    encodeURIComponent(k) + "=" + encodeURIComponent(v));
+            }
+        }
+        return str.join("&");
 
-		if(typeof obj !== "object")
-		if(typeof console !== "undefined"){
-			console.log("ng4-helpers : Provide a JSON Object");
-			return null;
-		}
-
-		let u = encodeURIComponent;
-	    let encodedURL = "";
-	    let keys = Object.keys(obj);
-
-	    for(let i=0; i < keys.length; i++){
-	    
-	    	let k = scope ? scope + "[" + keys[i] + "]" : keys[i];
-
-	    	if(typeof obj[keys[i]] !== "object"){
-	        encodedURL += u(k) + "=" + u(obj[keys[i]]);
-	      } else {
-	        encodedURL += this.addAll(obj[keys[i]], k)
-	      }
-	      if(i < (keys.length-1))encodedURL+="&";
-	    }
-
-
-		return encodedURL;
-	}
+    }
 
 	getData(){
 		return this.data;
