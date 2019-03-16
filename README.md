@@ -1,11 +1,11 @@
-# Angular 4 Data Helpers
+# Data Helpers for Angular Projects
 
 ### Installing
 
 Install using npm
 
 ```
-npm install ng4-helpers@latest
+npm install ng4-helpers
 ```
 
 ### Usage
